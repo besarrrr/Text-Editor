@@ -36,7 +36,7 @@ export const getDb = async () => {
 
   const jateDB = await openDB('jate', 1);
 
-  const tx = jateDB.transaction('jate', 'readonly');
+  const tx = jateDB.transaction('jate', 'readwrite');
 
   const store = tx.objectStore('jate');
 
@@ -44,9 +44,7 @@ export const getDb = async () => {
 
   const result = await request;
   console.log('result.value', result);
-  return result;
-
-
+  
 }
 
 initdb();
